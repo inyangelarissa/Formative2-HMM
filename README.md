@@ -1,6 +1,6 @@
 # Formative 2: Human Activity Recognition with a Hidden Markov Model
 
-Author: Inyange Larissa (ALU). Four hidden states (standing, walking, jumping, still) inferred from phone
+Four hidden states (standing, walking, jumping, still) inferred from phone
 accelerometer + gyroscope data (Sensor Logger, iPhone 11 Pro Max) with an HMM written from scratch in NumPy
 (Baum-Welch with a log-likelihood convergence check, and Viterbi decoding).
 
@@ -12,8 +12,6 @@ accelerometer + gyroscope data (Sensor Logger, iPhone 11 Pro Max) with an HMM wr
 | `data/train/` | `<activity>_01..12.csv`, training recordings |
 | `data/test/` | `<activity>_13..20.csv`, unseen recordings |
 | `hmm_activity_recognition.ipynb` | full pipeline: QC, harmonization, features, HMM, evaluation |
-| `HMM_Activity_Recognition_Report.docx` | short report (4 pages) |
-| `figures/` | every figure used in the report |
 | `results_summary.json` | all numbers quoted in the report |
 
 ## Run it
