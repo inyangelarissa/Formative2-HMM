@@ -1,0 +1,562 @@
+{
+  "window": {
+    "win_s": 2.0,
+    "fs": 50,
+    "samples": 100,
+    "hop": 50,
+    "fft_resolution_hz": 0.5,
+    "nyquist_hz": 25.0
+  },
+  "coverage": {
+    "standing": {
+      "files": 19,
+      "seconds": 131.2
+    },
+    "walking": {
+      "files": 20,
+      "seconds": 147.0
+    },
+    "jumping": {
+      "files": 20,
+      "seconds": 144.5
+    },
+    "still": {
+      "files": 20,
+      "seconds": 127.2
+    }
+  },
+  "n_files": {
+    "total": 79,
+    "train": 48,
+    "test": 31
+  },
+  "native_rate": {
+    "device": "iPhone 11 Pro Max",
+    "acc": 49.644272607171864,
+    "gyro": 49.644272607171864,
+    "n_zips": 79
+  },
+  "windows": {
+    "train": {
+      "walking": 70,
+      "jumping": 69,
+      "standing": 64,
+      "still": 56
+    },
+    "test": {
+      "walking": 49,
+      "jumping": 47,
+      "still": 42,
+      "standing": 39
+    },
+    "n_features": 38,
+    "recordings_train": {
+      "jumping": 12,
+      "standing": 12,
+      "walking": 12,
+      "still": 11
+    },
+    "recordings_test": {
+      "jumping": 8,
+      "still": 8,
+      "walking": 8,
+      "standing": 7
+    }
+  },
+  "dom_freq": {
+    "standing": {
+      "acc": 1.5,
+      "gyr": 1.0
+    },
+    "walking": {
+      "acc": 1.0,
+      "gyr": 0.5
+    },
+    "jumping": {
+      "acc": 3.5,
+      "gyr": 2.0
+    },
+    "still": {
+      "acc": 4.0,
+      "gyr": 1.5
+    }
+  },
+  "cv": {
+    "table": [
+      {
+        "var_floor": 0.1,
+        "training": "supervised only",
+        "cv_accuracy": 0.9064
+      },
+      {
+        "var_floor": 0.1,
+        "training": "supervised + Baum-Welch",
+        "cv_accuracy": 0.8698
+      },
+      {
+        "var_floor": 0.01,
+        "training": "supervised only",
+        "cv_accuracy": 0.818
+      },
+      {
+        "var_floor": 0.01,
+        "training": "supervised + Baum-Welch",
+        "cv_accuracy": 0.7735
+      },
+      {
+        "var_floor": 0.001,
+        "training": "supervised only",
+        "cv_accuracy": 0.8277
+      },
+      {
+        "var_floor": 0.001,
+        "training": "supervised + Baum-Welch",
+        "cv_accuracy": 0.7674
+      },
+      {
+        "var_floor": 0.0001,
+        "training": "supervised only",
+        "cv_accuracy": 0.9002
+      },
+      {
+        "var_floor": 0.0001,
+        "training": "supervised + Baum-Welch",
+        "cv_accuracy": 0.8789
+      }
+    ],
+    "best_floor": 0.1,
+    "best_bw": false,
+    "best_acc": 0.9064365459102302
+  },
+  "baum_welch": {
+    "iterations": 17,
+    "converged": true,
+    "tol": 0.0001,
+    "start": -13.012494194496762,
+    "end": -12.724432976963195,
+    "monotone": true,
+    "history": [
+      -13.012494194496762,
+      -12.918775382768134,
+      -12.905022512621887,
+      -12.899010550324798,
+      -12.895540353806275,
+      -12.89179005059282,
+      -12.877707781410935,
+      -12.848860785420925,
+      -12.783796752541845,
+      -12.76626185613426,
+      -12.752700729543523,
+      -12.728743843859835,
+      -12.725718039240185,
+      -12.72491163760158,
+      -12.72461626819908,
+      -12.724489177142072,
+      -12.724432976963195
+    ],
+    "final": "supervised"
+  },
+  "A_bw": [
+    [
+      0.9057,
+      0.0399,
+      0.0397,
+      0.0146
+    ],
+    [
+      0.0188,
+      0.8389,
+      0.0537,
+      0.0886
+    ],
+    [
+      0.0737,
+      0.0442,
+      0.8673,
+      0.0148
+    ],
+    [
+      0.0578,
+      0.0374,
+      0.0377,
+      0.867
+    ]
+  ],
+  "A_sup": [
+    [
+      0.8615,
+      0.0769,
+      0.0462,
+      0.0154
+    ],
+    [
+      0.0274,
+      0.8082,
+      0.0685,
+      0.0959
+    ],
+    [
+      0.0694,
+      0.0694,
+      0.8333,
+      0.0278
+    ],
+    [
+      0.0678,
+      0.0508,
+      0.0508,
+      0.8305
+    ]
+  ],
+  "pi_bw": [
+    0.1676,
+    0.3328,
+    0.3328,
+    0.1668
+  ],
+  "pi_sup": [
+    0.2,
+    0.3,
+    0.3,
+    0.2
+  ],
+  "emission_top_features": [
+    "acc_energy",
+    "acc_band_2_5",
+    "acc_var_z",
+    "acc_band_5_10",
+    "acc_std_z",
+    "gyr_energy",
+    "acc_band_0_2",
+    "acc_sma",
+    "gyr_band_5_10",
+    "gyr_band_2_5",
+    "gyr_std_x",
+    "acc_band_10_25"
+  ],
+  "eval": {
+    "final": "supervised",
+    "table": [
+      {
+        "State (Activity)": "standing",
+        "Number of Samples": 39,
+        "Sensitivity": 0.9487,
+        "Specificity": 0.9493,
+        "Accuracy (one-vs-rest)": 0.9492,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "walking",
+        "Number of Samples": 49,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "jumping",
+        "Number of Samples": 47,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "still",
+        "Number of Samples": 42,
+        "Sensitivity": 0.8333,
+        "Specificity": 0.9852,
+        "Accuracy (one-vs-rest)": 0.9492,
+        "Overall Accuracy": 0.9492
+      }
+    ],
+    "acc_final": 0.9491525423728814,
+    "acc_sup": 0.9491525423728814,
+    "acc_bw": 0.9717514124293786,
+    "acc_base": 0.903954802259887,
+    "correct": 168,
+    "total": 177,
+    "M_final": [
+      [
+        37,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        49,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        47,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        35
+      ]
+    ],
+    "M_sup": [
+      [
+        37,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        49,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        47,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        35
+      ]
+    ],
+    "M_bw": [
+      [
+        37,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        49,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        47,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        39
+      ]
+    ],
+    "M_base": [
+      [
+        37,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        49,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        47,
+        0
+      ],
+      [
+        15,
+        0,
+        0,
+        27
+      ]
+    ],
+    "table_sup": [
+      {
+        "State (Activity)": "standing",
+        "Number of Samples": 39,
+        "Sensitivity": 0.9487,
+        "Specificity": 0.9493,
+        "Accuracy (one-vs-rest)": 0.9492,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "walking",
+        "Number of Samples": 49,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "jumping",
+        "Number of Samples": 47,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9492
+      },
+      {
+        "State (Activity)": "still",
+        "Number of Samples": 42,
+        "Sensitivity": 0.8333,
+        "Specificity": 0.9852,
+        "Accuracy (one-vs-rest)": 0.9492,
+        "Overall Accuracy": 0.9492
+      }
+    ],
+    "table_bw": [
+      {
+        "State (Activity)": "standing",
+        "Number of Samples": 39,
+        "Sensitivity": 0.9487,
+        "Specificity": 0.9783,
+        "Accuracy (one-vs-rest)": 0.9718,
+        "Overall Accuracy": 0.9718
+      },
+      {
+        "State (Activity)": "walking",
+        "Number of Samples": 49,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9718
+      },
+      {
+        "State (Activity)": "jumping",
+        "Number of Samples": 47,
+        "Sensitivity": 1.0,
+        "Specificity": 1.0,
+        "Accuracy (one-vs-rest)": 1.0,
+        "Overall Accuracy": 0.9718
+      },
+      {
+        "State (Activity)": "still",
+        "Number of Samples": 42,
+        "Sensitivity": 0.9286,
+        "Specificity": 0.9852,
+        "Accuracy (one-vs-rest)": 0.9718,
+        "Overall Accuracy": 0.9718
+      }
+    ],
+    "ll_test_sup": -2491.921923095866,
+    "ll_test_bw": -2393.5669226902246
+  },
+  "confusions": [
+    [
+      "still",
+      "standing",
+      7
+    ],
+    [
+      "standing",
+      "still",
+      2
+    ]
+  ],
+  "feature_means": {
+    "acc_std_z": {
+      "jumping": 1.63,
+      "standing": -0.63,
+      "still": -0.64,
+      "walking": -0.52
+    },
+    "acc_sma": {
+      "jumping": 1.61,
+      "standing": -0.67,
+      "still": -0.69,
+      "walking": -0.42
+    },
+    "acc_dom_freq": {
+      "jumping": -0.04,
+      "standing": -0.23,
+      "still": 0.94,
+      "walking": -0.51
+    },
+    "acc_energy": {
+      "jumping": 1.58,
+      "standing": -0.79,
+      "still": -0.86,
+      "walking": -0.14
+    },
+    "gyr_energy": {
+      "jumping": 1.5,
+      "standing": -0.82,
+      "still": -0.91,
+      "walking": -0.01
+    }
+  },
+  "robustness": [
+    {
+      "condition": "original (50 Hz)",
+      "overall accuracy": 0.949,
+      "std over draws": 0.0
+    },
+    {
+      "condition": "+ noise (25% of signal std), mean of 5 draws",
+      "overall accuracy": 0.908,
+      "std over draws": 0.026
+    },
+    {
+      "condition": "+ noise (50% of signal std), mean of 5 draws",
+      "overall accuracy": 0.866,
+      "std over draws": 0.031
+    },
+    {
+      "condition": "+ noise (100% of signal std), mean of 5 draws",
+      "overall accuracy": 0.821,
+      "std over draws": 0.016
+    },
+    {
+      "condition": "effective rate 25 Hz (interpolated back to 50 Hz)",
+      "overall accuracy": 0.932,
+      "std over draws": 0.0
+    },
+    {
+      "condition": "effective rate 10 Hz (interpolated back to 50 Hz)",
+      "overall accuracy": 0.853,
+      "std over draws": 0.0
+    }
+  ],
+  "window_sensitivity": [
+    {
+      "window_s": 1.0,
+      "samples": 50,
+      "fft_resolution_hz": 1.0,
+      "train_windows": 585,
+      "unseen_windows": 402,
+      "accuracy": 0.893,
+      "walking_jumping_acc": 0.991,
+      "standing_still_acc": 0.782
+    },
+    {
+      "window_s": 2.0,
+      "samples": 100,
+      "fft_resolution_hz": 0.5,
+      "train_windows": 259,
+      "unseen_windows": 177,
+      "accuracy": 0.949,
+      "walking_jumping_acc": 1.0,
+      "standing_still_acc": 0.889
+    },
+    {
+      "window_s": 3.0,
+      "samples": 150,
+      "fft_resolution_hz": 0.333,
+      "train_windows": 146,
+      "unseen_windows": 103,
+      "accuracy": 0.932,
+      "walking_jumping_acc": 1.0,
+      "standing_still_acc": 0.851
+    }
+  ]
+}
